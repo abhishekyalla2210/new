@@ -3,7 +3,7 @@
   connection: local
   become: yes
   tasks:
-  - name : printing the loops
+  - name: printing the loops
     ansible.builtin.package:
       name: "{{ item.name }}"
       state: "{{present.state}}"
