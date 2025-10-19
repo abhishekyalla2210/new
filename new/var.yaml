@@ -8,7 +8,7 @@
     tasks:
     - name: printing something
       ansible.builtin.debud:
-        msg: "course is{{ COURSE NAME }}, {{ DURATION }}"
+        msg: "course is{{ COURSE NAME }}, {{ DURATION }} {{TRAINER}}"
+        
 
      
-  if [ ]
