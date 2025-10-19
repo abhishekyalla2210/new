@@ -1,7 +1,0 @@
-- name: print something
-  hosts: local
-  connections: local
-  tasks:
-  - name: print message
-    ansible.builtin.debug:
-      msg: "hello world course :{{ COURSE }}, {{ DURATION }}"
