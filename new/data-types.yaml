@@ -5,13 +5,14 @@
     course: devops #srings
     duration: 5 #Integer
     trainer: sivakumar_123 #strings with special characters
-    tasks:
-    - name: print something
-      ansible.builtin.debug:
-        msg: "printing the {{ course }} {{ duration }}"
     tools:
       - "linux"
       - shell
     concepts:
       clouds: aws
-      
+  tasks:
+    - name: print something
+      ansible.builtin.debug:
+        msg: "printing the {{ course }} {{ duration }}"
+  
+
