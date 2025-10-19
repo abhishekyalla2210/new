@@ -1,0 +1,12 @@
+- name: printing the loops
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+    - name : printing the loops
+      ansible.builtin.debug:
+        -name: "{{ item }}""
+        state: present
+      loop:
+      - nginx
+      - mysql
