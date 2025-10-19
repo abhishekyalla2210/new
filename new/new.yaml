@@ -4,4 +4,4 @@
   tasks:
   - name: print message
     ansible.builtin.debug:
-      msg: "hello world course :{{ COURSE }}, {{ DURATION }}"
+      msg: "hello world course :{{ COURSE_NAME }}, {{ DURATION }}"
