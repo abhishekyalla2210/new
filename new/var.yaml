@@ -1,0 +1,14 @@
+- name: print
+  hosts: local
+  connection: local
+  vars_prompt:
+  - name : username
+    prompt: what's your name?false
+    private: 
+    tasks:
+    - name: printing something
+      ansible.builtin.debud:
+        msg: "course is{{ COURSE NAME }}, {{ DURATION }}"
+
+     
+  if [ ]
