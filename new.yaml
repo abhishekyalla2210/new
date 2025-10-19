@@ -1,1 +1,11 @@
-kygkvyiyv
+- name: print something
+  hosts: local
+  connections: local
+  vars_prompt:
+    - name: username
+      prompt: et your name
+      private: false
+  tasks:
+  - name: print message
+    ansible.builtin.debug:
+      msg: "hello world"
