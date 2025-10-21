@@ -25,4 +25,4 @@
      ansible.builtin.copy:
        content: "{{ student_yaml | to_nice_json }}"
        dest: ./students.json
-    
+     

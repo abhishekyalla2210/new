@@ -1,0 +1,14 @@
+- name: user cretion
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+    - name: creating the user
+      ansible.builtin.command: cat /etc/passwd | grep root
+
+      register: user-creation
+
+    - name: printing the user
+      ansible.builtin.debug:
+        msg: "user creation status is {{ user-creation }}"
+        
