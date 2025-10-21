@@ -5,7 +5,6 @@
   tasks:
     - name: creating the user
       ansible.builtin.command: cat /etc/passwd | grep root
-
       register: user-creation
 
     - name: printing the user
