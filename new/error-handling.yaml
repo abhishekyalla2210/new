@@ -5,9 +5,9 @@
   tasks:
     - name: creating the user
       ansible.builtin.command: cat /etc/passwd | grep root
-      register: user-creation
+      register: user_creation
 
     - name: printing the user
       ansible.builtin.debug:
-        msg: "user creation status is {{ user-creation }}"
+        msg: "user creation status is {{ user_creation }}"
         
