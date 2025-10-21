@@ -1,0 +1,11 @@
+- name: abhishek
+  doorno: 1-77
+  place: kakinada
+  studies:
+  - school: vidyanjali
+    class: 10
+    section: b
+  skills:
+  - programming
+  - devops
+  - linux
