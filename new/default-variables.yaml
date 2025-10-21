@@ -4,6 +4,6 @@
   vars:
     technology: devops, linux, ansible
   tasks:
-   - name: default  variables
+   - name: cahnging var to list
      ansible.builtin.debug:
       msg: "courses are: {{  technology | split(',') }}"
