@@ -14,4 +14,4 @@
   # tasks:
    - name: printing tags
      ansible.builtin.debug:
-       msg: "tags are {{ tags }}"
+       msg: "tags are {{ tags | dict2items}}"
