@@ -14,7 +14,7 @@
   # tasks:
    - name: printing tags
      ansible.builtin.copy:
-       msg: "tags are {{ tags | dict2items}}"
+       msg: "tags are {{ tags | dict2items }}"
    - name: converting yaml to json
      ansible.builtin.debug:
        msg: "tags in json {{ student.yaml | to_nice_json }}"
