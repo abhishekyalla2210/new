@@ -5,7 +5,7 @@
   tasks:
     - name: creating the user
 
-      ansible.builtin.command: ls-l
+      ansible.builtin.command: ls -l
       register: user_creation
 
     - name: printing the user
