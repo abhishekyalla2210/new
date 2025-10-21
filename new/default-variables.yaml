@@ -3,10 +3,10 @@
   connection: local
   vars:
     technology: devops, linux, ansible
+    
     tags:
      appl: ansible
      status: running
-  
   tasks:
    - name: cahnging var to list
      ansible.builtin.debug:
