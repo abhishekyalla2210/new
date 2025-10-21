@@ -13,7 +13,7 @@
       msg: "courses are: {{ technology }}"
   # tasks:
    - name: printing tags
-     ansible.builtin.copy:
+     ansible.builtin.debug:
        msg: "tags are {{ tags | dict2items }}"
    - name: converting yaml to json
      ansible.builtin.debug:
