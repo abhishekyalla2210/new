@@ -6,12 +6,12 @@ if [ $# -ne 1 ]; then
  exit 1
  fi
 
- if [ -r $1]; then
+ if [ -r $1 ]; then
     echo "read permission is there"
 
     
   fi
- if [ -w $1]; then
+ if [ -w $1 ]; then
     echo "write permission is there"
      
     
