@@ -5,11 +5,11 @@ if [ $# -ne 1 ]; then
  echo "pass argunents"
  exit 1
  fi
-chmod +rwx $1
+ per= $(chmod +rwx $1)
  if [ -r $1 ]; then
     echo "read permission is there"
 else
-    echo "read permission is not there"
+    echo "$per"
 
     
   fi
