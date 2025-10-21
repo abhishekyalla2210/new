@@ -17,7 +17,7 @@
        msg: "tags are {{ tags | dict2items }}"
    - name: read yaml and and take ot to variables
      ansible.builtin.set_fact:
-       student_yaml: "{{ lookup()'file', 'student.yaml'}}"
+       student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}"
    - name: converting yaml to json
      ansible.builtin.debug:
        msg: "tags in json {{ student_yaml | to_nice_json }}"
