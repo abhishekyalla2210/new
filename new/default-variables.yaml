@@ -6,4 +6,4 @@
    tasks:
    - name: default  variables
      ansible.builtin.debug:
-      msg: "courses are: {{ technology | default('terraform')}}""
+      msg: "courses are: {{ technology | default('terraform') }}"
