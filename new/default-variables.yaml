@@ -17,5 +17,5 @@
        msg: "tags are {{ tags | dict2items}}"
    - name: converting yaml to json
      ansible.builtin.debug:
-       msg: "tags in json {{ student.yaml | to_json }}"
+       msg: "tags in json {{ student.yaml | to_nice_json }}"
     -
