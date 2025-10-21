@@ -1,0 +1,9 @@
+- name: printing default variables
+  hosts: local
+  connection: local
+  vars:
+   technology: devops, linux, ansible
+   tasks:
+   - name:default  variables
+     ansible.builtin.debug:
+      msg: "courses are: {{ technology}}"
