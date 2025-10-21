@@ -4,7 +4,7 @@
   become: yes
   tasks:
     - name: creating the user
-      ansible.builtin.command: cat /etc/passwd | grep root
+      ansible.builtin.command: id roboshop
       register: user_creation
 
     - name: printing the user
