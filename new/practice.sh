@@ -1,6 +1,6 @@
 #!/bin/bash
 file=$1
-if [ $# -ne 1]; then
+if [ $# -ne 1 ]; then
 
  echo "pass argunents"
  exit 1
@@ -8,11 +8,11 @@ if [ $# -ne 1]; then
 
  if [ -r $1]; then
     echo "read permission is there"
-     else
+
     
   fi
  if [ -w $1]; then
     echo "write permission is there"
-     else
+     
     
   fi
