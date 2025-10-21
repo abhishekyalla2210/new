@@ -21,4 +21,8 @@
    - name: converting yaml to json
      ansible.builtin.debug:
        msg: "tags in json {{ student_yaml | to_nice_json }}"
+   - name: colying to filr
+     ansible.builtin.copy:
+       content: "{{ student_yaml | to_nice_json }}"
+       dest: ./students.json
     
