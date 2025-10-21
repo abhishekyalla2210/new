@@ -11,4 +11,7 @@
     - name: printing the user
       ansible.builtin.debug:
         msg: "user creation status is {{ user_creation }}"
+    - name: creating
+      ansible.builtin.command: useradd roboshop
+      when: user_creation.rc != 0
         
