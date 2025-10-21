@@ -6,4 +6,4 @@
   tasks:
    - name: cahnging var to list
      ansible.builtin.debug:
-      msg: "courses are: {{  technology }}"
+      msg: "courses are: {{  technology | split(',') }}"
