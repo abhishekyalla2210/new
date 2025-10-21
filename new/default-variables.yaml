@@ -3,7 +3,15 @@
   connection: local
   vars:
     technology: devops, linux, ansible
+  tags:
+    appl: ansible
+    status: running
+  
   tasks:
    - name: cahnging var to list
      ansible.builtin.debug:
       msg: "courses are: {{ technology }}"
+  tasks:
+   - name: printing tags
+     ansible.builtin.debug:
+       msg: "tags are {{ tags }}"
