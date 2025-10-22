@@ -1,6 +1,7 @@
 - name: creating ec2_instance
   hosts: local
   connection: local
+  become: yes
   vars:
     ami_id: ami-09c813fb71547fc4f
     sd_id: sg-03c6dffbde757a30b
