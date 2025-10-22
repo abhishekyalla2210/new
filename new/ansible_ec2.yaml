@@ -6,7 +6,7 @@
     ami_id: ami-09c813fb71547fc4f
     sd_id: sg-03c6dffbde757a30b
     zone_id: Z01730921MDPIK694OSXC
-    domain_name: abhishekdev.fun\
+    domain_name: abhishekdev.fun
 
     instances:
     - nginx
@@ -28,7 +28,7 @@
         msg: "{{ ec2_instances }}"
     - name: displaying the public ip addresses
       ansible.builtin.debug:
-        msg: "The public IP address of {{ item.instance[0]}}"
+        msg: "The public IP address of {{ item.instance[0] }}"
 
 
           
