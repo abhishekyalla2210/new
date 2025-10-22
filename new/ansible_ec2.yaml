@@ -28,15 +28,15 @@
       ansible.builtin.debug:
         var: ec2_output
     
-    # - name: print public instance
-    #   ansible.builtin.debug:
-    #     msg: "{{ item.instances[0].public_ip_address }}"
-    #   loop: "{{ ec2_output.results }}"
+    - name: print public instance
+      ansible.builtin.debug:
+        msg: "{{ item.instances[0].public_ip_address }}"
+      loop: "{{ ec2_output.results }}"
 
-    # - name: print private instance
-    #   ansible.builtin.debug:
-    #     msg: "{{ item.instances[0].private_ip_address }}"
-    #   loop: "{{ ec2_output.results }}"
+    - name: print private instance
+      ansible.builtin.debug:
+        msg: "{{ item.instances[0].private_ip_address }}"
+      loop: "{{ ec2_output.results }}"
 
 
     - name: creatin route 53
