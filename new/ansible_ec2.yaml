@@ -28,14 +28,25 @@
       ansible.builtin.debug:
         var: ec2_output
     
-    - name: print public instance
-      ansible.builtin.debug:
-        msg: "{{ item.instances[0].public_ip_address }}"
-      loop: "{{ ec2_output.results }}"
+    # - name: print public instance
+    #   ansible.builtin.debug:
+    #     msg: "{{ item.instances[0].public_ip_address }}"
+    #   loop: "{{ ec2_output.results }}"
 
-    - name: print private instance
-      ansible.builtin.debug:
-        msg: "{{ item.instances[0].private_ip_address }}"
-      loop: "{{ ec2_output.results }}"
+    # - name: print private instance
+    #   ansible.builtin.debug:
+    #     msg: "{{ item.instances[0].private_ip_address }}"
+    #   loop: "{{ ec2_output.results }}"
+
+
+    - name: creatin route 53
+      amazon.aws.route53:
+        state: present
+        zone: foo.com
+        record: "{{ item.item }}.{{ domain_name }}"
+        type: A
+        ttl: 1
+        value:  "{{ item.instances[0].private_ip_address }}"
+        wait: true
        
-       
+    
