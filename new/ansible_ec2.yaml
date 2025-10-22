@@ -1,0 +1,36 @@
+- name: creating ec2_instance
+  hosts: local
+  connection: local
+  vars:
+    ami_id: ami-09c813fb71547fc4f
+    sd_id: sg-03c6dffbde757a30b
+    zone_id: Z01730921MDPIK694OSXC
+    domain_name: abhishekdev.fun\
+
+    instances:
+    - nginx
+    - mysql
+    - rabbitmq
+    tasks:
+    - name: launching the ec2_instance
+      amazon.aws.ec2_instance:
+        name: "{{ item }}"
+        ec2_instance_type: t3.micro
+        security_group_ids: "{{ sd_id }}"
+        image_id: "{{ ami_id }}"
+        tags:
+          name: "{{ item }}"
+      loop: "{{ instances }}"
+      register: ec2_instances
+    - name: printing the output
+      ansible.builtin.debug:
+        msg: "{{ ec2_instances }}""
+    - name: displaying the public ip addresses
+      ansible.builtin.debug:
+        msg: "The public IP address of {{ item.instance[0]}}"
+
+
+          
+
+
+      
