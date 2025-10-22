@@ -42,7 +42,7 @@
     - name: creatin route 53
       amazon.aws.route53:
         state: present
-        zone: foo.com
+        zone: "{{ domain_name }}"
         record: "{{ item.item }}.{{ domain_name }}"
         type: A
         ttl: 1
