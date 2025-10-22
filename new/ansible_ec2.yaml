@@ -1,23 +1,24 @@
 - name: creating ec2_instance
   hosts: local
   connection: local
+  gather_facts: false
 
   vars:
-    ami_id: ami-09c813fb71547fc4f
-    sg_id: sg-03c6dffbde757a30b
-    zone_id: Z01730921MDPIK694OSXC
+    ami_id: ami‑09c813fb71547fc4f
+    sg_id: sg‑03c6dffbde757a30b
+            # specify VPC subnet if needed
     domain_name: abhishekdev.fun
-
     instances:
-    - mongodb
-   
+      - mongodb
+
   tasks:
     - name: launching the ec2_instance
       amazon.aws.ec2_instance:
         name: "{{ item }}"
+        image_id: "{{ ami_id }}"
         instance_type: t3.micro
         security_group: "{{ sg_id }}"
-        image_id: "{{ ami_id }}"
+       
         tags:
           Name: "{{ item }}"
       loop: "{{ instances }}"
@@ -25,10 +26,4 @@
 
     - name: printing the output
       ansible.builtin.debug:
-        msg: "{{ ec2_output}}"
-    
-
-          
-
-
-      
+        var: ec2_output
