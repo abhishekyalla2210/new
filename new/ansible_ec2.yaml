@@ -4,9 +4,9 @@
   gather_facts: false
 
   vars:
-    ami_id: ami‑09c813fb71547fc4f
-    sg_id: sg‑03c6dffbde757a30b
-            # specify VPC subnet if needed
+    ami_id: ami-09c813fb71547fc4f
+    sg_id: sg-03c6dffbde757a30b
+            
     domain_name: abhishekdev.fun
     instances:
       - mongodb
