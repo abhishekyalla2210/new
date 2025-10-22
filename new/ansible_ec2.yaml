@@ -25,7 +25,7 @@
       register: ec2_instances
     - name: printing the output
       ansible.builtin.debug:
-        msg: "{{ ec2_instances }}""
+        msg: "{{ ec2_instances }}"
     - name: displaying the public ip addresses
       ansible.builtin.debug:
         msg: "The public IP address of {{ item.instance[0]}}"
