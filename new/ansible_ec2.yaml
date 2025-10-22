@@ -9,7 +9,7 @@
     domain_name: abhishekdev.fun
 
     instances:
-    - nginx
+    - mongodb
    
   tasks:
     - name: launching the ec2_instance
@@ -19,12 +19,13 @@
         security_group: "{{ sd_id }}"
         image_id: "{{ ami_id }}"
         tags:
-          name: "{{ item }}"
+          Name: "{{ item }}"
       loop: "{{ instances }}"
-      register: ec2_instances
+      register: ec2_output
+
     - name: printing the output
       ansible.builtin.debug:
-        msg: "{{ ec2_instances }}"
+        msg: "{{ ec2_output}}"
     
 
           
