@@ -28,12 +28,12 @@
       ansible.builtin.debug:
         var: ec2_output
     
-    - name: print public instance_type
+    - name: print public instance
       ansible.builtin.debug:
         msg: "{{ item .instance.0.private_ip_address }}"
         loop: "{{ ec2_output.results }}"
 
-    - name: print private instance_type
+    - name: print private instance
       ansible.builtin.debug:
         msg: "{{ item .instance.0.public_ip_address }}"
         loop: "{{ ec2_output.results }}"
